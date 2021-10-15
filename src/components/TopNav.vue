@@ -1,7 +1,15 @@
 <template>
-  <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <nav
+    class="navbar is-dark"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="navbar-brand">
-      <a href="/" class="navbar-item" id="logo">
+      <a
+        id="logo"
+        href="/"
+        class="navbar-item"
+      >
         flikit
       </a>
 
@@ -11,14 +19,14 @@
         aria-label="menu"
         aria-expanded="false"
       >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
+        <span aria-hidden="true" />
       </a>
     </div>
     <div class="navbar-end">
       <div class="navbar-item">
-        <search-bar v-bind:q="q" />
+        <search-bar :q="q" />
       </div>
     </div>
   </nav>
@@ -30,13 +38,11 @@ import SearchBar from "@/components/SearchBar.vue";
 export default {
   name: "TopNav",
 
-  props: {
-    q: { type: String },
-  },
-
   components: {
     SearchBar,
   },
+
+  props: { q: { type: String, default: "" } },
 };
 </script>
 

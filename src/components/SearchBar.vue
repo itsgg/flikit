@@ -2,17 +2,20 @@
   <div class="field has-addons">
     <div class="control">
       <input
+        v-model="tags"
         class="input"
         type="search"
         placeholder="Search..."
-        v-model="tags"
         @keyup.enter="onSubmit"
-      />
+      >
     </div>
     <!-- XXX: Support or tag search -->
     <div class="buttons">
-      <button class="button is-primary" @click="onSubmit">
-        <i class="fas fa-search"></i>
+      <button
+        class="button is-primary"
+        @click="onSubmit"
+      >
+        <i class="fas fa-search" />
       </button>
     </div>
   </div>
@@ -22,9 +25,7 @@
 export default {
   name: "SearchBar",
 
-  props: {
-    q: { type: String },
-  },
+ props: { q: { type: String, default: "" } },
 
   data() {
     return {

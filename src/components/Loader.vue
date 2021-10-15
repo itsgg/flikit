@@ -1,5 +1,5 @@
 <template>
-  <progress class="progress is-large is-warning mt-5 mb-5"></progress>
+  <progress class="progress is-large is-warning mt-5 mb-5" />
 </template>
 
 <script>

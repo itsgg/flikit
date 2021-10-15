@@ -2,15 +2,31 @@
   <div class="card">
     <div class="card-image">
       <figure class="image is-4by3">
-        <img :src="image.media.m" :alt="image.title" />
+        <img
+          :src="image.media.m"
+          :alt="image.title"
+        >
       </figure>
     </div>
     <div class="card-content">
-      <p class="title is-4">{{ image.title }}</p>
-      <p class="subtitle is-6 has-text-primary">{{ authorName }}</p>
-      <div class="tags" v-if="tagText.length > 0">
-        <span v-for="tag in tags" :key="tag">
-          <a @click="selectTag(tag)" class="tag mr-2">
+      <p class="title is-4">
+        {{ image.title }}
+      </p>
+      <p class="subtitle is-6 has-text-primary">
+        {{ authorName }}
+      </p>
+      <div
+        v-if="tagText.length > 0"
+        class="tags"
+      >
+        <span
+          v-for="tag in tags"
+          :key="tag"
+        >
+          <a
+            class="tag mr-2"
+            @click="selectTag(tag)"
+          >
             {{ tag }}
           </a>
         </span>

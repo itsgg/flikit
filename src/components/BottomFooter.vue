@@ -3,11 +3,17 @@
     <div class="content has-text-centered">
       <p>
         A simple Flicker browser by GG with
-        <i class="fa fa-heart has-text-danger"></i>
+        <i class="fa fa-heart has-text-danger" />
       </p>
       <p>
-        <a href="https://itsgg.com" target="_blank">itsgg</a> /
-        <a href="https://github.com/itsgg/flikit" target="_blank">github</a>
+        <a
+          href="https://itsgg.com"
+          target="_blank"
+        >itsgg</a> /
+        <a
+          href="https://github.com/itsgg/flikit"
+          target="_blank"
+        >github</a>
       </p>
     </div>
   </footer>

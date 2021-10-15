@@ -1,5 +1,5 @@
 <template>
-  <top-nav v-bind:q="q" />
+  <top-nav :q="q" />
 
   <!-- XXX: Extract TitleBar  -->
   <div class="hero is-small is-info">
@@ -9,7 +9,7 @@
       </div>
     </div>
   </div>
-  <images v-bind:q="q" />
+  <images :q="q" />
 
   <bottom-footer />
 </template>
@@ -22,12 +22,12 @@ import Images from "@/components/Images.vue";
 export default {
   name: "Home",
 
-  props: { q: { type: String } },
-
   components: {
     TopNav,
     BottomFooter,
     Images,
   },
+
+  props: { q: { type: String, default: "" } },
 };
 </script>
