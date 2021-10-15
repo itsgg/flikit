@@ -1,6 +1,10 @@
 <template>
   <loader v-if="loading" />
-  {{ images }}
+  <div class="card-grid mt-2">
+    <div v-for="image in images" :key="image.link">
+      <image-card :image="image" />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -8,12 +12,14 @@ import fetchJsonp from "fetch-jsonp";
 import config from "@/config.js";
 
 import Loader from "@/components/Loader.vue";
+import ImageCard from "@/components/ImageCard.vue";
 
 export default {
   name: "Images",
 
   components: {
     Loader,
+    ImageCard,
   },
 
   data() {
@@ -44,3 +50,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-gap: 1rem;
+}
+</style>
