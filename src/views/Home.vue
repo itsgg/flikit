@@ -9,6 +9,7 @@
       </div>
     </div>
   </div>
+  
   <images :q="q" />
 
   <bottom-footer />

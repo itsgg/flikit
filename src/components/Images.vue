@@ -3,14 +3,8 @@
 
   <not-found v-if="!loading && notFound" />
 
-  <div
-    v-if="!loading && !notFound"
-    class="card-grid mt-2"
-  >
-    <div
-      v-for="image in images"
-      :key="image.link"
-    >
+  <div v-if="!loading && !notFound" class="card-grid m-4">
+    <div v-for="image in images" :key="image.link">
       <image-card :image="image" />
     </div>
   </div>
