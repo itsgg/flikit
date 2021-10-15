@@ -28,4 +28,8 @@ describe("ImageCard", () => {
     const img = wrapper.get(".image img");
     expect(img.attributes("src")).toContain(image.media.m);
   });
+
+  it("has tags", async () => {
+    expect(wrapper.get(".tag").text()).toContain(image.tags);
+  });
 });

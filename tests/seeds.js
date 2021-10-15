@@ -4,11 +4,13 @@ export default {
       title: "Image One",
       author: 'nobody@flickr.com ("Author One")',
       media: { m: "https://via.placeholder.com/300.png" },
+      tags: "one",
     },
     {
       title: "Image Two",
       author: 'nobody@flickr.com ("Author Two")',
       media: { m: "https://via.placeholder.com/300.png" },
+      tags: "three",
     },
   ],
 };
