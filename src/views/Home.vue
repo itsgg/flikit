@@ -1,25 +1,21 @@
 <template>
   <top-nav />
-
-  <div class="content">
-    <h1>Home</h1>
-    <p>This is the Home component.</p>
-    <i class="fas fa-search"></i>
-  </div>
-
+  <images />
   <bottom-footer />
 </template>
 
 <script>
 import TopNav from "@/components/TopNav.vue";
 import BottomFooter from "@/components/BottomFooter.vue";
+import Images from "@/components/Images.vue";
 
 export default {
   name: "Home",
 
   components: {
     TopNav,
-    BottomFooter
+    BottomFooter,
+    Images,
   },
 };
 </script>
