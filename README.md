@@ -2,6 +2,8 @@
 
 A simple Flicker browser.
 
+- [Demo](https://flikit.netlify.app/)
+
 ## Project setup
 
 ### Install node and libraries
