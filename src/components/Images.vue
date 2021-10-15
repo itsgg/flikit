@@ -1,6 +1,9 @@
 <template>
   <loader v-if="loading" />
-  <div class="card-grid mt-2">
+
+  <not-found v-if="!loading && notFound" />
+
+  <div class="card-grid mt-2" v-if="!loading && !notFound">
     <div v-for="image in images" :key="image.link">
       <image-card :image="image" />
     </div>
@@ -12,13 +15,17 @@ import fetchJsonp from "fetch-jsonp";
 import config from "@/config.js";
 
 import Loader from "@/components/Loader.vue";
+import NotFound from "@/components/NotFound.vue";
 import ImageCard from "@/components/ImageCard.vue";
 
 export default {
   name: "Images",
 
+  props: { q: { type: String } },
+
   components: {
     Loader,
+    NotFound,
     ImageCard,
   },
 
@@ -33,11 +40,18 @@ export default {
     this.getImages();
   },
 
+  computed: {
+    notFound() {
+      return this.images.length === 0;
+    },
+  },
+
   methods: {
     async getImages() {
       this.loading = true;
       const query = new URLSearchParams({
         format: "json",
+        tags: this.q,
       });
       const response = await fetchJsonp(`${config.apiUrl}?${query}`, {
         jsonpCallbackFunction: "jsonFlickrFeed",
@@ -46,6 +60,12 @@ export default {
       const { items } = await response.json();
       this.images = items;
       this.loading = false;
+    },
+  },
+
+  watch: {
+    q() {
+      this.getImages();
     },
   },
 };

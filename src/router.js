@@ -6,7 +6,10 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+    props: (route) => ({
+      q: route.query.q,
+    }),
   },
 ];
 

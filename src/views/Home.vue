@@ -1,6 +1,13 @@
 <template>
   <top-nav />
-  <images />
+  <div class="hero is-small is-info">
+    <div class="hero-body">
+      <div class="title">
+        {{ q || "Latest" }}
+      </div>
+    </div>
+  </div>
+  <images v-bind:q="q" />
   <bottom-footer />
 </template>
 
@@ -11,6 +18,8 @@ import Images from "@/components/Images.vue";
 
 export default {
   name: "Home",
+
+  props: { q: { type: String } },
 
   components: {
     TopNav,

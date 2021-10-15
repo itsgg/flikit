@@ -8,7 +8,7 @@
     <div class="card-content">
       <p class="title is-4">{{ image.title }}</p>
       <p class="subtitle is-6 has-text-primary">{{ authorName }}</p>
-      <div class="tags">
+      <div class="tags" v-if="tagText.length > 0">
         <span v-for="tag in tags" :key="tag">
           <a @click="selectTag(tag)" class="tag mr-2">
             {{ tag }}
@@ -28,8 +28,11 @@ export default {
   },
 
   computed: {
+    tagText() {
+      return this.image.tags.trim();
+    },
     tags() {
-      return this.image.tags.trim().split(" ");
+      return this.tagText.split(" ");
     },
     authorName() {
       // nobody@flickr.com (\"pipetpeacedream\") => pipetpeacedream
@@ -39,7 +42,7 @@ export default {
 
   methods: {
     selectTag(tag) {
-      console.log(tag);
+      this.$router.push({ name: "Home", query: { q: tag } });
     },
   },
 };

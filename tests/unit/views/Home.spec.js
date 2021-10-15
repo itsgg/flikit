@@ -27,4 +27,13 @@ describe("Home", () => {
   it("has Images", () => {
     expect(wrapper.getComponent(Images)).toBeTruthy();
   });
+
+  it("has default title", async () => {
+    expect(wrapper.find(".title").text()).toContain("Latest");
+  });
+
+  it("has tags as title", async () => {
+    await wrapper.setProps({ q: "Sunset" });
+    expect(wrapper.find(".title").text()).toContain("Sunset");
+  });
 });
