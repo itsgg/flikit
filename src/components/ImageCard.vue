@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-content">
-      {{ image }}
+      <p class="title is-4">{{ image.title }}</p>
     </div>
   </div>
 </template>
