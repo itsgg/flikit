@@ -1,5 +1,7 @@
 <template>
-  <top-nav />
+  <top-nav v-bind:q="q" />
+
+  <!-- XXX: Extract TitleBar  -->
   <div class="hero is-small is-info">
     <div class="hero-body">
       <div class="title">
@@ -8,6 +10,7 @@
     </div>
   </div>
   <images v-bind:q="q" />
+
   <bottom-footer />
 </template>
 

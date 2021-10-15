@@ -12,11 +12,7 @@ let wrapper;
 
 describe("Images", () => {
   beforeEach(() => {
-    wrapper = mount(Images, {
-      global: {
-        mocks,
-      },
-    });
+    wrapper = mount(Images, { global: { mocks } });
   });
 
   it("displays loader", async () => {
