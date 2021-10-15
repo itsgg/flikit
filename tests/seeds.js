@@ -1,6 +1,14 @@
 export default {
   images: [
-    { title: "Image 1", author: 'nobody@flickr.com ("one") ' },
-    { title: "Image 2", author: 'nobody@flickr.com ("two") ' },
+    {
+      title: "Image One",
+      author: 'nobody@flickr.com ("Author One")',
+      media: { m: "https://via.placeholder.com/300.png" },
+    },
+    {
+      title: "Image Two",
+      author: 'nobody@flickr.com ("Author Two")',
+      media: { m: "https://via.placeholder.com/300.png" },
+    },
   ],
 };

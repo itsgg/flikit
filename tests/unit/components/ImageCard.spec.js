@@ -21,6 +21,11 @@ describe("ImageCard", () => {
   });
 
   it("has author", async () => {
-    expect(wrapper.get(".subtitle").text()).toContain("one");
+    expect(wrapper.get(".subtitle").text()).toContain("Author One");
+  });
+
+  it("has image", async () => {
+    const img = wrapper.get(".image img");
+    expect(img.attributes("src")).toContain(image.media.m);
   });
 });

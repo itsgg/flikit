@@ -1,5 +1,10 @@
 <template>
   <div class="card">
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <img :src="image.media.m" :alt="image.title" />
+      </figure>
+    </div>
     <div class="card-content">
       <p class="title is-4">{{ image.title }}</p>
       <p class="subtitle is-6 has-text-primary">{{ authorName }}</p>
@@ -23,3 +28,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>
